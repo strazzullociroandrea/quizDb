@@ -43,7 +43,7 @@ const gestisciSalvataggio = () => {
     if (inputs[i].checked) {
       const json = {};
       json["id"] = domande[conta].id;
-      console.log("id domanda: "+domande[conta].id);
+      console.log("id domanda: " + domande[conta].id);
       json["value"] = inputs[i].id.replace("radio", "");
       //json[domande[conta].id] = inputs[i].id.replace("radio","")
       risposteDate.push(json);
@@ -114,6 +114,8 @@ const renderWall = () => {
       persone.innerHTML = "";
       response.forEach((persona) => {
         const data = new Date(persona.timestamp);
+        console.log("data: ");
+        console.log(data);
         persone.innerHTML +=
           "<tr><td>" +
           persona.nome +
@@ -166,7 +168,7 @@ const visualizzaDomande = () => {
     for (let i = 0; i < domande.length; i++) {
       let riga = domandaTemplate;
       riga = riga.replace("%DOMANDA", domande[i].question);
-    for (let j = 0; j < domande[i].answers.length; j++) {
+      for (let j = 0; j < domande[i].answers.length; j++) {
         riga = riga
           .replace("%RADIO" + (j + 1), domande[i].answers[j])
           .replace("%RADIO" + (j + 1), j)

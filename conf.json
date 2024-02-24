@@ -1,0 +1,6 @@
+module.exports = {
+  "host": "casaponissa.ddns.net",
+  "user": "ciro",
+  "password": "Ciroandrea03",
+  "database": "QuizDb",
+}
