@@ -1,0 +1,70 @@
+CREATE TABLE IF NOT EXISTS argomento (titolo VARCHAR(255) PRIMARY KEY,tempoRisposta NUMERIC(50) NOT NULL);
+CREATE TABLE IF NOT EXISTS domanda (id INT PRIMARY KEY AUTO_INCREMENT,argomento VARCHAR(255) NOT NULL,question VARCHAR(255) NOT NULL,FOREIGN KEY (argomento) REFERENCES argomento(titolo) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE IF NOT EXISTS risposta (id INT PRIMARY KEY AUTO_INCREMENT,idDomanda INT NOT NULL,valore VARCHAR(255) NOT NULL,punteggio INT NOT NULL,FOREIGN KEY (idDomanda) REFERENCES domanda(id) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE IF NOT EXISTS partita (id INT PRIMARY KEY AUTO_INCREMENT,argomento VARCHAR(255) NOT NULL,timestamp TIMESTAMP NOT NULL,punteggio NUMERIC(50) NOT NULL,nomeGiocatore VARCHAR(255) NOT NULL,FOREIGN KEY (argomento) REFERENCES argomento(titolo) ON DELETE CASCADE ON UPDATE CASCADE);
+
+INSERT INTO argomento VALUES('informatica','6000');
+
+INSERT INTO domanda (argomento, question) VALUES('informatica','Cos\'è nodejs?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Che cosa signifca HTML?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Per cosa si utilizza java?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Quale affermazione per php è corretta?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Cos\'è express?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Cos\'è una variabile globale?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Quale fra queste fa parte del ciclo di vita del software?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','A cosa serve l\'html?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','Cos\'è il BGP?');
+INSERT INTO domanda (argomento, question) VALUES('informatica','A cosa serve il framework Electron?');
+
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(3,"Un runtime",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(3,"Non esiste",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(3,"Un protocollo",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(3,"Un server",0);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(4,"Hyperlink and Text Manipulation Language",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(4,"HyperTransfer Markup Logic",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(4,"HighTech Modern Language",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(4, "HyperText Markup Language",0);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(5,"Per creare delle jsp",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(5,"Per creare delle servlet",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(5,"Per creare applicazioni",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(5, "Tutte e tre le precedenti",10);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(6,"Si usa per creare API",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(6,"Si può eseguire solo lato server",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(6, "Non è tipizzato",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(6, "Tutte e tre le precedenti",10);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(7,"E' un framework per applicazioni nodejs",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(7,"E' un treno",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(7, "E' un film",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(7, "Non esiste",0);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(8,"Una variabile visibile in tutto il mondo",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(8, "Una variabile visibile all'interno di una sola funzione",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(8, "Una funzione visibile da qualsiasi funzione",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(8, "E' una variabile",0);
+
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(9,"Coding",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(9, "Build",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(9, "Running & debugging",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(9, "Tutte e tre le precedenti",10);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(10,"A creare la struttura base di una pagina",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(10, "E' un linguaggio di programmazione",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(10, "E' inutile",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(10, "Non so",0);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(11,"Un protocollo",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(11, "Un protocollo di routing",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(11, "E' un protocollo \'morto\' come il RIP",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(11, "E' un protocollo non ancora affidabile",0);
+
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(12,"Ad aiutare chi lavora con la chimica",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(12,"Permette di creare applicazioni desktop usando HTML",10);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(12, "E' inutile",0);
+INSERT INTO risposta (idDomanda,valore,punteggio) VALUES(12,"E' un tipo di pasta",0);
+
